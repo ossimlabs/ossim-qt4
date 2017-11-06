@@ -143,9 +143,9 @@ void ossimQtOverviewBuilderDialog::buildClicked()
    // Build the overview.
    if (theWriter->execute())
    {
-      if(handler->getState())
+      if(theImageHandler->getState())
       {
-         handler->getState()->setOverviewState(0);
+         theImageHandler->getState()->setOverviewState(0);
       }
       theImageHandler->openOverview();
    }
