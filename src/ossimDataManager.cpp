@@ -133,7 +133,7 @@ ossimConnectableObject* ossimDataManager::insertObject(const ossimString& classN
    ossimConnectableObject* newObj = (ossimConnectableObject*)ossimObjectFactoryRegistry::instance()->createObject(classNameToInsert);
    ossimImageChain* defaultChain = PTR_CAST(ossimImageChain, obj);
    
-   if(!newObj) return false;
+   if(!newObj) return result;
    // check to see if its an image space filter to add
    //
    if(classNameToInsert == "ossimImageToPlaneNormalFilter")

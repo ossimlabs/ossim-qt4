@@ -61,7 +61,7 @@ public:
    void highClipPercentReturnPressed();
    void lowClipValueReturnPressed();
    void highClipValueReturnPressed();
-   void midPointReturnPressed();
+   // void midPointReturnPressed();
    void outputMinValueReturnPressed();
    void outputMaxValueReturnPressed();
 
@@ -75,7 +75,7 @@ private:
    void setHighClipPercentage() const;
    void setLowClipValue() const;
    void setHighClipValue() const;
-   void setMidPoint() const;
+   // void setMidPoint() const;
    void setOutputMinValue() const;
    void setOutputMaxValue() const;
    void setHistogramFile() const;

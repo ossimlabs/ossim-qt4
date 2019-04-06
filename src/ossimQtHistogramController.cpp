@@ -357,6 +357,7 @@ void ossimQtHistogramController::highClipValueReturnPressed()
    }
 }
 
+#if 0
 void ossimQtHistogramController::midPointReturnPressed()
 {
    if (!theHistogramRemapper || theCallBackDisabled) return;
@@ -387,6 +388,7 @@ void ossimQtHistogramController::midPointReturnPressed()
       refresh();
    }
 }
+#endif
 
 void ossimQtHistogramController::outputMinValueReturnPressed()
 {
@@ -464,7 +466,7 @@ void ossimQtHistogramController::updateDialog()
    setHighClipPercentage();
    setLowClipValue();
    setHighClipValue();
-   setMidPoint();
+   // setMidPoint();
    setOutputMinValue();
    setOutputMaxValue();
    setHistogramFile();
@@ -582,6 +584,7 @@ void ossimQtHistogramController::setHighClipValue() const
    theDialog->theHighClipValueLineEdit->setText(s);
 }
 
+#if 0
 void ossimQtHistogramController::setMidPoint() const
 {
    if (!theHistogramRemapper) return;
@@ -602,6 +605,7 @@ void ossimQtHistogramController::setMidPoint() const
    QString s = ossimString::toString(value, 0).c_str();
    theDialog->theMidPointLineEdit->setText(s);
 }
+#endif
 
 void ossimQtHistogramController::setOutputMinValue() const
 {
