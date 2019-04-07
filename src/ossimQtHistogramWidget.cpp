@@ -93,18 +93,21 @@ void ossimQtHistogramWidget::paintBand()
    p.setPen(p1);
 
    ossimRefPtr<ossimHistogram> h = theRemapper->getHistogram(theBand);
+   ossimScalarType scalarType = theRemapper->getOutputScalarType();
+   float nullValue = theRemapper->getNullPixelValue(theBand);
    if (h.valid())
    {
       float min = floor(h->GetMinVal());
       float max = ceil(h->GetMaxVal());
-      float maxBins = h->GetRes();
-      ossimRefPtr<ossimHistogram> scaledHisto = new ossimHistogram(WIDTH, min, max);
+      ossim_int32 maxBins = h->GetRes();
+      ossimRefPtr<ossimHistogram> scaledHisto =
+         new ossimHistogram(WIDTH, min, max, nullValue, scalarType);
       ossim_uint32 binIdx = 0;
       float delta = (max-min)/maxBins;
-      float* sumCounts = scaledHisto->GetCounts();
-      ossim_int32 sumIndex = 0;
+      ossim_int64* sumCounts = scaledHisto->GetCounts();
+      ossim_int64 sumIndex = 0;
       float value = 0.0;
-      memset(sumCounts, '\0', sizeof(float)*WIDTH);
+      memset(sumCounts, '\0', sizeof(ossim_int64)*WIDTH);
       
       for(binIdx = 0; binIdx < maxBins;++binIdx)
       {
@@ -115,7 +118,7 @@ void ossimQtHistogramWidget::paintBand()
             sumCounts[sumIndex] += h->GetCount(value);
          }
       }
-      float sumMaxCount   = scaledHisto->GetMaxCount();
+      ossim_int64 sumMaxCount   = scaledHisto->GetMaxCount();
       int height = 0;
       if(sumMaxCount > 0.0)
       {
@@ -182,10 +185,13 @@ void ossimQtHistogramWidget::paintAvg()
          max_count += hmax_count;
       }
    }
-   ossimRefPtr<ossimHistogram> scaledHisto = new ossimHistogram(WIDTH, min, max);
+   ossimScalarType scalarType = theRemapper->getOutputScalarType();
+   float nullValue = theRemapper->getNullPixelValue(theBand);
+   ossimRefPtr<ossimHistogram> scaledHisto =
+      new ossimHistogram(WIDTH, min, max, nullValue, scalarType);
    ossim_uint32 binIdx = 0;
    float delta = (max-min)/maxBins;
-   float* sumCounts = scaledHisto->GetCounts();
+   ossim_int64* sumCounts = scaledHisto->GetCounts();
    ossim_int32 sumIndex = 0;
    float value = 0.0;
    memset(sumCounts, '\0', sizeof(float)*WIDTH);
@@ -203,7 +209,7 @@ void ossimQtHistogramWidget::paintAvg()
       }
    }
 
-   float sumMaxCount   = scaledHisto->GetMaxCount();
+   ossim_int64 sumMaxCount   = scaledHisto->GetMaxCount();
    int height = 0;
    if(sumMaxCount > 0.0)
    {

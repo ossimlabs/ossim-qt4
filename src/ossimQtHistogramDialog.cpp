@@ -178,7 +178,8 @@ void ossimQtHistogramDialog::midPointReturnPressed()
 {
    if (theController)
    {
-      theController->midPointReturnPressed();
+      // tmp drb
+      // theController->midPointReturnPressed();
    }
 }
 
