@@ -68,6 +68,8 @@
 #  include <insertion-code/pqeInsert3.h>
 #endif
 
+using namespace std;
+
 static ossimTrace traceDebug(
    ossimString("ossimQtPositionQualityDialog:debug"));
 

@@ -33,6 +33,8 @@
 #include <QtCore/QVariant>
 #include <map>
 
+using namespace std;
+
 ossimQtPropertyFontItem::ossimQtPropertyFontItem(ossimQtPropertyListView *propList,
                                                  ossimQtPropertyItem *after,
                                                  ossimQtPropertyItem *parent,

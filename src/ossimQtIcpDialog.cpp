@@ -32,6 +32,8 @@
 #include <ossim/imaging/ossimImageFileWriter.h>
 #include <ossim/imaging/ossimImageHandler.h>
 
+using namespace std;
+
 ossimQtIcpDialog::ossimQtIcpDialog(QWidget* parent,
                                    ossimImageChain* image_chain)
    : QDialog(parent, "ossimQtIcpDialog", true, Qt::WDestructiveClose),

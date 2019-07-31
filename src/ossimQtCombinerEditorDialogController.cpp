@@ -20,6 +20,8 @@
 #include <ossim/base/ossimConnectableObject.h>
 #include <ossim/imaging/ossimImageChain.h>
 
+using namespace std;
+
 ossimQtCombinerEditorDialogController::ossimQtCombinerEditorDialogController(ossimQtCombinerEditorDialog* dialog)
   :theDialog(dialog),
    theCombiner(NULL),

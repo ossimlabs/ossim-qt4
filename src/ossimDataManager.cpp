@@ -32,6 +32,8 @@
 #include <ossim/base/ossimProcessListener.h>
 #include <algorithm>
 
+using namespace std;
+
 RTTI_DEF2(ossimDataManager, "ossimDataManager", ossimObject, ossimListenerManager);
 
 class ossimDataManagerPrivateListener : public ossimConnectableObjectListener,

@@ -79,6 +79,8 @@
 
 #include <sstream>
 
+using namespace std;
+
 
 ossimQtImageWindowController::ossimQtImageWindowController(ossimQtImageWindow* window)
    :

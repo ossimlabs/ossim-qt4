@@ -23,6 +23,8 @@
 #include <ossimQt/ossimDataManager.h>
 #include <ossimQt/ossimQtEvent.h>
 
+using namespace std;
+
 const ossimString ossimQtProject::EXTENSION="prj";
 
 int ossimQtProject::theUnamedFileCounter = 0;

@@ -27,6 +27,8 @@
 #include <ossim/base/ossimKeywordNames.h>
 
 
+using namespace std;
+
 ossimQtViewDialogController::ossimQtViewDialogController(ossimQtViewDialog* dialog)
 : theViewDialog(dialog),
 theViewObject(0)

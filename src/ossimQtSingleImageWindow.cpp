@@ -55,6 +55,8 @@
 static const int DEFAULT_WIDTH  = 512;
 static const int DEFAULT_HEIGHT = 512;
 
+using namespace std;
+
 RTTI_DEF2(ossimQtSingleImageWindow,
           "ossimQtSingleImageWindow",
           ossimConnectableObject,

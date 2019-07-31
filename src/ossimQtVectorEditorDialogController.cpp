@@ -38,6 +38,9 @@
 #include <ossim/base/ossimPropertyEvent.h>
 #include <ossim/font/ossimFontFactoryRegistry.h>
 #include <ossimQt/ossimQtDisplayUtility.h>
+
+using namespace std;
+
 ossimQtVectorEditorDialogController::ossimQtVectorEditorDialogController()
   :theDialog(NULL),
    theVectorSource(NULL),

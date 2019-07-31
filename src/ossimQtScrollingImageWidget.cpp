@@ -26,10 +26,9 @@
 #include <QtGui/QCursor>
 #include <iostream>
 
+using namespace std;
 
 static const int maxProcessingTime = 50;
-
-
 
 ossimQtScrollingImageWidget::~ossimQtScrollingImageWidget ()
 {

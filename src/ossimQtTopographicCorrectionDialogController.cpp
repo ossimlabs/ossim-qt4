@@ -36,6 +36,8 @@
 #include <Qt3Support/Q3FileDialog>
 
 
+using namespace std;
+
 ossimQtTopographicCorrectionDialogController::ossimQtTopographicCorrectionDialogController(ossimQtTopographicCorrectionDialog* dialog)
   :theDialog(dialog),
    theObject(NULL)

@@ -56,6 +56,8 @@
 #include <vector>
 #include <exception>
 
+using namespace std;
+
 ossimFilename ossimQtIgenController::theLatestOutputFilePath = ".";
 
 static ossimTrace traceDebug("ossimQtIgenController:degug");
