@@ -11,7 +11,6 @@ SET(QT_USE_QT3SUPPORT "ON")
 FIND_PACKAGE(Qt4 REQUIRED) # find and setup Qt4 for this project
 INCLUDE(${QT_USE_FILE})
 SET(QT_USE_QTOPENGL ON)
-find_package(Qt4)
 
 find_package(OpenThreads)
 find_package(ossim)
