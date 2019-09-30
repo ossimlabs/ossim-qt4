@@ -1,5 +1,15 @@
 PROJECT(ossim-qt4)
+cmake_minimum_required(VERSION 2.8)
 MESSAGE("**********************Setting up ossim-qt4********************")
+
+message("OSSIM_DEV_HOME = ${OSSIM_DEV_HOME}")
+message("OSSIM_INSTALL_PREFIX = ${OSSIM_INSTALL_PREFIX}")
+SET(CMAKE_MODULE_PATH
+		${OSSIM_DEV_HOME}/ossim/cmake/CMakeModules
+		${OSSIM_INSTALL_PREFIX}/share/ossim/CMakeModules
+		${CMAKE_MODULE_PATH})
+message("CMAKE_MODULE_PATH = ${CMAKE_MODULE_PATH}")
+
 INCLUDE(OssimVersion)
 INCLUDE(OssimUtilities)
 INCLUDE(OssimCommonVariables)
@@ -7,10 +17,10 @@ INCLUDE(OssimQt4Macros)
 
 SET (QT_MIN_VERSION "4.2.2")
 SET(QT_USE_QT3SUPPORT "ON")
-
 FIND_PACKAGE(Qt4 REQUIRED) # find and setup Qt4 for this project
 INCLUDE(${QT_USE_FILE})
 SET(QT_USE_QTOPENGL ON)
+#find_package(Qt4)
 
 find_package(OpenThreads)
 find_package(ossim)
