@@ -17,7 +17,7 @@ INCLUDE(OssimQt4Macros)
 
 SET (QT_MIN_VERSION "4.2.2")
 SET(QT_USE_QT3SUPPORT "ON")
-set(QT_BINARY_DIR ${OSSIM_INSTALL_PREFIX}/bin)
+set(QT_BINARY_DIR /usr/local/bin)
 message("@@@@ Using QT_BINARY_DIR = ${QT_BINARY_DIR} @@@@")
 FIND_PACKAGE(Qt4 REQUIRED) # find and setup Qt4 for this project
 INCLUDE(${QT_USE_FILE})
