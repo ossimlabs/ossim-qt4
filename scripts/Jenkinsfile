@@ -61,7 +61,7 @@ node ("${BUILD_NODE}")
       }
       stage("Load Build Image")
       {
-         sh "docker load -i ${env.WORKSPACE}/ossim-build-${ARTIFACT_TYPE}.tgz"
+         sh "docker load -i ${env.WORKSPACE}/ossim-base-build-${ARTIFACT_TYPE}.tgz"
       }
       stage("Build OSSIM Qt4")
       {
@@ -77,7 +77,7 @@ node ("${BUILD_NODE}")
 
             sh """
                ossim-sandbox/docker-run.sh --env-file ${env.WORKSPACE}/env.txt \
-               ossim-build-${ARTIFACT_TYPE}:${DOCKER_LABEL} \
+               ossim-base-build-${ARTIFACT_TYPE}:${DOCKER_LABEL} \
                ossim-qt4/scripts/build-ossim-qt4.sh $ARTIFACT_TYPE
              """
          }
