@@ -42,7 +42,7 @@ node ("${BUILD_NODE}")
             flatten: true])
 
         step ([$class: "CopyArtifact",
-            projectName: "build-qt4-dependency/${OSSIM_GIT_BRANCH}",
+            projectName: "build-qt4-dependency",
             filter: "qt4-${ARTIFACT_TYPE}.tgz",
             flatten: true])
 
