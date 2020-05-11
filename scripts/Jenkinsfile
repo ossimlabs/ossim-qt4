@@ -26,16 +26,19 @@ node ("${BUILD_NODE}")
          }
          step ([$class: "CopyArtifact",
             projectName: "ossim-sandbox-docker-multibranch/${OSSIM_GIT_BRANCH}",
-            filter: "ossim-build-${ARTIFACT_TYPE}.tgz",
+            filter: "ossim-base-build-${ARTIFACT_TYPE}.tgz",
             flatten: true])
+
          step ([$class: "CopyArtifact",
             projectName: "ossim-sandbox-ossimbuild-multibranch/${OSSIM_GIT_BRANCH}",
-            filter: "ossim-sandbox-${ARTIFACT_TYPE}-all.tgz",
+            filter: "ossim-sandbox-${ARTIFACT_TYPE}-runtime.tgz",
             flatten: true])
+
          step ([$class: "CopyArtifact",
             projectName: "ossim-sandbox-ossimbuild-multibranch/${OSSIM_GIT_BRANCH}",
             filter: "ossim-${ARTIFACT_TYPE}-dev.tgz",
             flatten: true])
+          
          load "common-variables.groovy"
          commonFunctions = load "common-functions.groovy"
          dockerEnv = commonFunctions?.getDockerEnv()
