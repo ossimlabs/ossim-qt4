@@ -24,6 +24,8 @@ INCLUDE(${QT_USE_FILE})
 SET(QT_USE_QTOPENGL ON)
 #find_package(Qt4)
 
+set(QT_BINARY_DIR /usr/bin)
+
 find_package(OpenThreads)
 find_package(ossim)
 find_package(TIFF)
