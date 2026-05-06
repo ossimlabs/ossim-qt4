@@ -1,5 +1,5 @@
+cmake_minimum_required(VERSION 3.5)
 PROJECT(ossim-qt4)
-cmake_minimum_required(VERSION 2.8)
 MESSAGE("**********************Setting up ossim-qt4********************")
 
 message("OSSIM_DEV_HOME = ${OSSIM_DEV_HOME}")
